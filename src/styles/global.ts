@@ -18,4 +18,8 @@ export const globalStyles = globalCss({
   button: {
     cursor: "pointer",
   },
+  ":focus": {
+    outline: "none",
+    boxShadow: "0 0 0 2px $colors$green500",
+  },
 });

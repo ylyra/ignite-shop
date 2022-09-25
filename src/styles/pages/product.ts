@@ -5,6 +5,7 @@ export const ProductContainer = styled("main", {
   gridTemplateColumns: "1fr 1fr",
   alignItems: "stretch",
   gap: "4rem",
+  paddingBottom: "2rem",
 
   maxWidth: 1180,
   margin: "0 auto",
@@ -61,7 +62,12 @@ export const ProductDetails = styled("div", {
     fontSize: "$md",
     transition: "background 0.25s",
 
-    "&:hover, &:focus": {
+    "&:disabled": {
+      opacity: 0.6,
+      cursor: "not-allowed",
+    },
+
+    "&:hover:not(:disabled), &:focus:not(:disabled)": {
       background: "$green300",
     },
   },

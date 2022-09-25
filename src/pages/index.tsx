@@ -9,6 +9,7 @@ import camiseta2 from "../assets/variant10.png";
 import camiseta1 from "../assets/variant11.png";
 
 import "keen-slider/keen-slider.min.css";
+import Head from "next/head";
 import { stripe } from "../lib/stripe";
 import { formatPrice } from "../utils/format";
 
@@ -30,13 +31,18 @@ const IndexPage: NextPage<HomeProps> = ({ products }) => {
   });
 
   return (
-    <HomeContainer ref={sliderRef} className="keen-slider">
-      {products.map((product) => (
-        <div key={product.id} className="keen-slider__slide">
-          <Product {...product} />
-        </div>
-      ))}
-    </HomeContainer>
+    <>
+      <Head>
+        <title>Ignite Shop</title>
+      </Head>
+      <HomeContainer ref={sliderRef} className="keen-slider">
+        {products.map((product) => (
+          <div key={product.id} className="keen-slider__slide">
+            <Product {...product} />
+          </div>
+        ))}
+      </HomeContainer>
+    </>
   );
 };
 

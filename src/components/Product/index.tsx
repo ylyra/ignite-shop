@@ -12,7 +12,7 @@ type ProductProps = {
 
 export function Product({ name, price, id, imageUrl }: ProductProps) {
   return (
-    <Link href={`/products/${id}`} passHref prefetch={false}>
+    <Link href={`/products/${id}`} prefetch={false}>
       <ProductContainer>
         <Image
           src={imageUrl}

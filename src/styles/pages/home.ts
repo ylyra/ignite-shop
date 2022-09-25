@@ -6,6 +6,7 @@ export const HomeContainer = styled("main", {
   maxWidth: "calc(100vw - ((100vw - 1180px) / 2))",
   marginLeft: "auto",
   minHeight: 656,
+  paddingBottom: "2rem",
 
   ".keen-slider__slide": {
     minWidth: "540px !important",
