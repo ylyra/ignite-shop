@@ -7,14 +7,24 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@stitches/react": "^1.2.8",
+    "axios": "^0.27.2",
+    "keen-slider": "^6.8.2",
     "next": "latest",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "stripe": "^10.11.0"
   },
   "devDependencies": {
     "@types/node": "^12.12.21",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
+    "cz-conventional-changelog": "^3.3.0",
     "typescript": "4.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
