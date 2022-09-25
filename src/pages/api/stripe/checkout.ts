@@ -12,14 +12,14 @@ export default async function handler(
     });
   }
 
-  if (!req.body.priceId) {
+  if (!req.body.products) {
     return res.status(400).json({
-      error: "Missing priceId",
+      error: "Missing products",
       status: "error",
     });
   }
 
-  const priceId = req.body.priceId;
+  const products = req.body.products;
   const host = req.headers.host;
   const URL =
     process.env.NODE_ENV === "production"
@@ -28,12 +28,11 @@ export default async function handler(
 
   const checkoutSession = await stripe.checkout.sessions.create({
     mode: "payment",
-    line_items: [
-      {
-        price: priceId,
-        quantity: 1,
-      },
-    ],
+    line_items: products,
+    billing_address_collection: "required",
+    shipping_address_collection: {
+      allowed_countries: ["BR"],
+    },
     cancel_url: URL,
     success_url: `${URL}/success?session_id={CHECKOUT_SESSION_ID}`,
   });

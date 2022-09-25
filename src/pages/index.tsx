@@ -4,14 +4,9 @@ import type { Stripe } from "stripe";
 import { Product } from "../components/Product";
 import { HomeContainer } from "../styles/pages/home";
 
-import camiseta3 from "../assets/variant09.png";
-import camiseta2 from "../assets/variant10.png";
-import camiseta1 from "../assets/variant11.png";
-
 import "keen-slider/keen-slider.min.css";
 import Head from "next/head";
 import { stripe } from "../lib/stripe";
-import { formatPrice } from "../utils/format";
 
 type HomeProps = {
   products: {
@@ -58,7 +53,7 @@ export const getStaticProps: GetStaticProps = async () => {
         id: product.id,
         name: product.name,
         imageUrl: product.images[0],
-        price: formatPrice(price.unit_amount / 100),
+        price: price.unit_amount,
       };
     });
 

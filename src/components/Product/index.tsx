@@ -24,7 +24,7 @@ export function Product({ name, price, id, imageUrl }: ProductProps) {
 
         <footer>
           <strong>{name}</strong>
-          <span>{price}</span>
+          <span>{formatPrice(price / 100)}</span>
         </footer>
       </ProductContainer>
     </Link>
